@@ -17,7 +17,7 @@ const Gemini = () => {
 
   useEffect(() => {
     if (prompt.trim()) {
-      sendPrompt(selectModel);
+      setPrompt(selectModel);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectModel]);
