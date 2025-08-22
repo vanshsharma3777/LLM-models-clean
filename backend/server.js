@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://gemini-lite-8g34.vercel.app",
+    origin: "https://llm-models-1.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   })
