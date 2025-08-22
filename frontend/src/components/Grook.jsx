@@ -24,7 +24,7 @@
             setLoading(true);
 
             try {
-                const res = await axios.post(`${backendURL}/api/grook`, {
+                const res = await axios.post(`${backendURL}/api/groq`, {
                     prompt: prompt.trim(),
                     model: selectModel
                 });
@@ -34,13 +34,13 @@
                     res.data?.choices[0]?.message?.content ||
                     "No Response";
                 setReply((prev) => [...prev,
-                { role: "grook", model: selectModel, text: text }
+                { role: "groq", model: selectModel, text: text }
                 ]);
             } catch (err) {
                  console.error("Groq API error:", err.response?.data || err.message);
     setReply((prev) => [
         ...prev,
-        { role: "grook", text: "Error: " + (err.response?.data?.error || err.message) },
+        { role: "groq", text: "Error: " + (err.response?.data?.error || err.message) },
     ])
             } finally {
                 setLoading(false);
