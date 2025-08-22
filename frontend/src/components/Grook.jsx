@@ -22,20 +22,30 @@
             setReply((prev) => [...prev, { role: "user", text: prompt }]);
             setPrompt("");
             setLoading(true);
+            
+            let message=[] 
+             messgae =((msg)=>{
+                [...msg , prompt]
+            })
 
             try {
                 const res = await axios.post(`${backendURL}/api/groq`, {
-                    prompt: prompt.trim(),
+                    prompt: message,
                     model: selectModel
                 });
              
-                    
+                let answer=[]
                 const text =
                     res.data?.choices[0]?.message?.content ||
                     "No Response";
                 setReply((prev) => [...prev,
                 { role: "groq", model: selectModel, text: text }
                 ]);
+                answer= ((msg)=>{
+                    [...msg , reply]
+                
+                
+                })
             } catch (err) {
                  console.error("Groq API error:", err.response?.data || err.message);
     setReply((prev) => [

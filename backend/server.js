@@ -6,10 +6,13 @@ const axios = require("axios");
 const PORT = process.env.PORT || 6000;
 const app = express();
 
+const allowOrigin =[
+  "https://llm-models-two.vercel.app", "https://localhost:5000"
+]
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://llm-models-two.vercel.app",
+    origin: allowOrigin,
     methods: ["GET", "POST"],
     credentials: true,
   })
