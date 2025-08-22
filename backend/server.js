@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://llm-models-1.vercel.app",
+    origin: "https://llm-models-two.vercel.app",
     methods: ["GET", "POST"],
     credentials: true,
   })
