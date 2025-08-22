@@ -64,7 +64,7 @@ app.post("/api/gemini", async (req, res) => {
 });
 
 // ---------------- Groq Route ----------------
-app.post("/api/grook", async (req, res) => {
+app.post("/api/groq", async (req, res) => {
   const { prompt, model } = req.body;
 
   try {
